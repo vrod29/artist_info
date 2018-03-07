@@ -19,9 +19,24 @@
 
 </head>
 
-<body>
+<body data-spy="scroll" data-target="#navScrollspy">
+  <nav class="navbar bg-primary navbar-dark navbar-expand-md fixed-top">
+    <div class="container">
+      <a href="/" class="navbar-brand">1 STOP MUSIC</a>
+      <button type="button" class="navbar-toggler navbar-toggler-right" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+      </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul id="navScrollspy"class="navbar-nav ml-auto">
+        <li class="nav-item">
+          <a href="about" class="nav-link">ABOUT US</a>
+        </li>
+      </ul>
+    </div>
+    </div>
+  </nav>
 
-  <div class="container-fluid px-0">
+  <div class="container-fluid pt-3 px-0">
       @yield('content')
   </div>
 
