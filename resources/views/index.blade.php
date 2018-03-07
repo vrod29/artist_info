@@ -6,7 +6,7 @@
 
 @section('content')
 
-<?php if (!empty($response)) dump($response); ?>
+<?php if (!empty($response)) dump($response['artists']['items'][0]['images'][0]['url']); ?>
 
   <!-- Header Jumbotron -->
   <section id="top" class="jumbotron jumbotron-fluid">
@@ -36,7 +36,7 @@
     <div class="row">
       <div class="col-md-4 text-center">
         <div class="card">
-          <img id="artistPic" class="card-img-top" src="brunomarsPic.jpg" alt="Card image cap">
+          <img id="artistPic" class="card-img-top" src="{{ $response['artists']['items'][0]['images'][0]['url'] }}" alt="Card image cap">
         <div class="card-body">
           <h1 id='artist-name'>Bruno Mars</h1>
         <div id="social-media">
