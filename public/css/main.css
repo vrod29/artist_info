@@ -30,6 +30,11 @@ p {
   color: white;
 }
 
+.btn:hover {
+  background-color: white !important;
+  color: #00C457 !important;
+}
+
 p {
   margin-top: -35px;
 }
