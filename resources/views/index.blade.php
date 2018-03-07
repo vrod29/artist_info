@@ -9,10 +9,10 @@
 <?php if (!empty($response)) dump($response['artists']['items'][0]['images'][0]['url']); ?>
 
   <!-- Header Jumbotron -->
-  <section id="top" class="jumbotron jumbotron-fluid">
+  <section id="top" class="jumbotron jumbotron-fluid @if (empty($response)) fullscreen @endif">
     <div class="container mt-5">
       <h1 class="display-4 text-center">Welcome to 1-Stop Music</h1>
-      <p class="lead text-center">Your 1-Stop site for artists info, discography, tour info, and videos.</p>
+      <p class="lead text-center">Your 1-Stop site for artists info, discography, and tour info.</p>
     </div>
     <div class="container">
       <div class="row justify-content-center">
@@ -23,7 +23,7 @@
           <form method="POST" action="/get_artist">
               @csrf
             <input name="searchArtist" type="text" id="query" value="" class="form-control" placeholder="Type an Artist Name" />
-            <button type="submit" id="search" class="btn btn-lg btn-rounded" value="">Search</button>
+            <button type="submit" id="search" class="btn btn-lg" value="">Search</button>
           <div id="results"></div>
           </form>
         </div>
@@ -32,6 +32,7 @@
   </section>
 
     <!-- ///pic/bio// -->
+  @if (!empty($response))
   <div class="container">
     <div class="row">
       <div class="col-md-4 text-center">
@@ -63,7 +64,8 @@
       </div>
     </div>
   </div>
-  <hr>
+  @endif
+  <!-- <hr>
 <div class="container">
   <div class="row">
     <div class="col-md-5 text-center">
@@ -97,6 +99,6 @@
               <iframe width="250" height="250" src="https://www.youtube.com/embed/nPvuNsRccVw">
             </iframe>
         </body>
-    </div>
+    </div> -->
 
 @endsection
