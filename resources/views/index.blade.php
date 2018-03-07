@@ -23,7 +23,7 @@
           <form method="POST" action="/get_artist">
               @csrf
             <input name="searchArtist" type="text" id="query" value="" class="form-control" placeholder="Type an Artist Name" />
-            <button type="submit" id="search" class="btn btn-lg" value="">Search</button>
+            <button type="submit" id="search" class="btn btn-lg btn-rounded" value="">Search</button>
           <div id="results"></div>
           </form>
         </div>
