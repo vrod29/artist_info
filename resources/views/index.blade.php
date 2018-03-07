@@ -18,9 +18,11 @@
           <h1>Search for an Artist</h1>
           <br>
           <p>Type an artist name and click on "Search".</p>
-            <input type="text" id="query" value="" class="form-control" placeholder="Type an Artist Name" />
-            <button id="search" class="btn" value="">Search</button>
+          <form method="GET" action="/get_artist">
+            <input name="searchArtist" type="text" id="query" value="" class="form-control" placeholder="Type an Artist Name" />
+            <button type="submit" id="search" class="btn btn-lg" value="">Search</button>
           <div id="results"></div>
+          </form>
         </div>
       </div>
     </div>

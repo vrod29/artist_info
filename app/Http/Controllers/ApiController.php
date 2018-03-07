@@ -89,6 +89,9 @@ class ApiController extends Controller
         $err = curl_error($curl);
 
         curl_close($curl);
-        return $response;
+        $data = [
+          'response' = $response
+        ];
+        return view('index')->with($data);
     }
 }
