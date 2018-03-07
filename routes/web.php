@@ -18,3 +18,5 @@ Route::get('/', function () {
 Route::get('about', function (){
   return view('about');
 });
+
+Route::get('/get_artist/{query}', 'ApiController@searchSpotify');
