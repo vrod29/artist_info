@@ -1,13 +1,33 @@
+.navbar {
+  background-color: black !important;
+}
 
-
+.nav-link {
+  color: white !important;
+}
+.nav-link:hover {
+  color: #00C457 !important;
+}
 .jumbotron-fluid {
-  /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#661d70+0,9d006a+50,e90053+100 */
-background: #661d70; /* Old browsers */
-background: -moz-linear-gradient(top, #661d70 0%, #9d006a 50%, #e90053 100%); /* FF3.6-15 */
-background: -webkit-linear-gradient(top, #661d70 0%,#9d006a 50%,#e90053 100%); /* Chrome10-25,Safari5.1-6 */
-background: linear-gradient(to bottom, #661d70 0%,#9d006a 50%,#e90053 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#661d70', endColorstr='#e90053',GradientType=0 ); /* IE6-9 */
-background-repeat: no-repeat;
+  /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#00c457+0,000000+100 */
+background: #00c457; /* Old browsers */
+background: -moz-linear-gradient(top, #00c457 0%, #000000 100%); /* FF3.6-15 */
+background: -webkit-linear-gradient(top, #00c457 0%,#000000 100%); /* Chrome10-25,Safari5.1-6 */
+background: linear-gradient(to bottom, #00c457 0%,#000000 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00c457', endColorstr='#000000',GradientType=0 ); /* IE6-9 */
+}
+
+h1 {
+  color: white;
+}
+
+p {
+  color: white;
+}
+
+.btn {
+  background-color: #00C457 !important;
+  color: white;
 }
 
 p {
