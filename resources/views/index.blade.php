@@ -11,13 +11,13 @@
   <!-- Header Jumbotron -->
   <section id="top" class="jumbotron jumbotron-fluid @if (empty($response)) fullscreen @endif">
     <div class="container mt-5">
-      <h1 class="display-4 text-center">Welcome to 1-Stop Music</h1>
+      <h1 class=" header-text display-4 text-center">Welcome to 1-Stop Music</h1>
       <p class="lead text-center">Your 1-Stop site for artists info, discography, and tour info.</p>
     </div>
     <div class="container">
       <div class="row justify-content-center">
         <div id="search-headings" class="col-6 text-center">
-          <h1>Search for an Artist</h1>
+          <h1 class="header-text">Search for an Artist</h1>
           <br>
           <p>Type an artist name and click on "Search".</p>
           <form method="POST" action="/get_artist">
@@ -41,9 +41,9 @@
         <div class="card-body">
           <h1>Bruno Mars</h1>
         <div id="social-media">
-          <a id='twitter' href=""><img class="twitter mx-1" src="assets/twitter.svg" alt="" width="30px" height="30px"></a>
-          <a id="facebook" href=""><img class="facebok mx-1" src="assets/facebook.svg" alt="" width="30px" height="30px"></a>
-          <a id='instagram' href=""><img class="instagram mx-1" src="assets/instagram.svg" alt="" width="30px" height="30px"></a>
+          <a id='twitter' href=""><img class="twitter mx-1" src="images/twitter.svg" alt="" width="30px" height="30px"></a>
+          <a id="facebook" href=""><img class="facebok mx-1" src="images/facebook.svg" alt="" width="30px" height="30px"></a>
+          <a id='instagram' href=""><img class="instagram mx-1" src="images/instagram.svg" alt="" width="30px" height="30px"></a>
         </div>
         </div>
       </div>
@@ -65,7 +65,7 @@
     </div>
   </div>
   @endif
-  <!-- <hr>
+  <hr>
 <div class="container">
   <div class="row">
     <div class="col-md-5 text-center">
@@ -99,6 +99,6 @@
               <iframe width="250" height="250" src="https://www.youtube.com/embed/nPvuNsRccVw">
             </iframe>
         </body>
-    </div> -->
+    </div>
 
 @endsection

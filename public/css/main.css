@@ -21,7 +21,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00c457', end
   height: 100vh;
 }
 
-h1 {
+.header-text {
   color: white;
 }
 
