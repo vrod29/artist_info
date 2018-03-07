@@ -90,8 +90,10 @@ class ApiController extends Controller
         $err = curl_error($curl);
 
         curl_close($curl);
+        $spotifyArtistResponse = json_decode($response, true);
+
         $data = [
-          'response' => $response
+          'response' => $spotifyArtistResponse
         ];
         return view('index')->with($data);
     }

@@ -6,6 +6,8 @@
 
 @section('content')
 
+<?php if (!empty($response)) dump($response); ?>
+
   <!-- Header Jumbotron -->
   <section id="top" class="jumbotron jumbotron-fluid">
     <div class="container mt-5">
