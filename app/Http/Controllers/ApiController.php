@@ -64,8 +64,9 @@ class ApiController extends Controller
         return $spotifyTokenResponse['access_token'];
     }
 
-    public function searchSpotify($query)
+    public function searchSpotify(Request $request)
     {
+        $query = $request->searchArtist;
         $accessToken = self::getSpotifyToken();
 
         $curl = curl_init();
