@@ -6,7 +6,7 @@
 
 @section('content')
 
-<?php if (!empty($response)) dump($response['artists']['items'][0]['images'][0]['url']); ?>
+<?php if (!empty($albums)) dump($albums); ?>
 
   <!-- Header Jumbotron -->
   <section id="top" class="jumbotron jumbotron-fluid @if (empty($response)) fullscreen @endif">

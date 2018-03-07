@@ -36,6 +36,31 @@ class ApiController extends Controller
         return $spotifyTokenResponse['access_token'];
     }
 
+    protected function getAlbums($artistId, $accessToken)
+    {
+        $curl = curl_init();
+        curl_setopt_array($curl, [
+            CURLOPT_URL => "https://api.spotify.com/v1/artists/$artistId/albums?album_type=album",
+            CURLOPT_RETURNTRANSFER => true,
+            CURLOPT_ENCODING => "",
+            CURLOPT_MAXREDIRS => 10,
+            CURLOPT_TIMEOUT => 30,
+            CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+            CURLOPT_CUSTOMREQUEST => "GET",
+            CURLOPT_HTTPHEADER => [
+                "Authorization: Bearer $accessToken",
+                "Cache-Control: no-cache",
+                "Content-Type: application/x-www-form-urlencoded",
+            ],
+        ]);
+
+        $response = curl_exec($curl);
+        $err = curl_error($curl);
+
+        curl_close($curl);
+        return json_decode($response, true);
+    }
+
     public function searchSpotify(Request $request)
     {
         $query = urlencode($request->searchArtist);
@@ -60,12 +85,14 @@ class ApiController extends Controller
 
         $response = curl_exec($curl);
         $err = curl_error($curl);
-
         curl_close($curl);
+
         $spotifyArtistResponse = json_decode($response, true);
+        $albums = self::getAlbums($spotifyArtistResponse['artists']['items'][0]['id'], $accessToken);
 
         $data = [
-          'response' => $spotifyArtistResponse
+          'response' => $spotifyArtistResponse,
+          'albums' => $albums
         ];
         return view('index')->with($data);
     }
