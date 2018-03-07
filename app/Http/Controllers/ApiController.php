@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-class ApiController extends Controller
+class ApiController extends Controller {
 
 
     function searchArtist(){
@@ -18,6 +18,7 @@ class ApiController extends Controller
             curl_close($ch);
             echo $response;
         }
+    }
 
     function searchAlbum(){
         if (!empty($_GET['artistId'])) {
@@ -30,3 +31,5 @@ class ApiController extends Controller
           curl_close($ch);
           echo $response;
         }
+    }
+}
