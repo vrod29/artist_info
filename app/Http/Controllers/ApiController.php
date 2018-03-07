@@ -91,7 +91,7 @@ class ApiController extends Controller
 
         curl_close($curl);
         $data = [
-          'response' = $response
+          'response' => $response
         ];
         return view('index')->with($data);
     }
