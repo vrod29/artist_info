@@ -6,27 +6,8 @@
 
 @section('content')
 
-</head>
-
-<body>
-
-    <!--  Jumbotron & Navbar -->
-  <div class="jumbotron jumbotron-fluid pt-3">
-    <div class="container">
-      <nav class="navbar navbar-expand-lg navbar-dark bg-transparent">
-        <a class="navbar-brand" href="/">1-Stop Music</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-          <ul class="navbar-nav ml-auto">
-            <li class="nav-item active">
-              <a class="nav-link" id="menu-item" href="about">ABOUT US<span class="sr-only">(current)</span></a>
-            </li>
-          </ul>
-        </div>
-      </nav>
-    </div>
+  <!-- Header Jumbotron -->
+  <section id="top" class="jumbotron jumbotron-fluid">
     <div class="container mt-5">
       <h1 class="display-4 text-center">Welcome to 1-Stop Music</h1>
       <p class="lead text-center">Your 1-Stop site for artists info, discography, tour info, and videos.</p>
@@ -38,12 +19,12 @@
           <br>
           <p>Type an artist name and click on "Search".</p>
             <input type="text" id="query" value="" class="form-control" placeholder="Type an Artist Name" />
-            <button id="search" class="btn btn-primary" value="">Search</button>
+            <button id="search" class="btn" value="">Search</button>
           <div id="results"></div>
         </div>
       </div>
     </div>
-  </div>
+  </section>
 
     <!-- ///pic/bio// -->
   <div class="container">
@@ -113,59 +94,4 @@
         </body>
     </div>
 
-
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-
-    <!-- Optional JavaScript -->
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-
-    <script>
-
-    $("#search").on("click", function(){
-      artistName = $("#query").val();
-      var artistName = artistName.split(' ').join('+');
-      console.log(artistName)
-      $("#query").val("");
-
-      $.ajax({
-        url: '/php/searchArtist.php?artist=' + artistName,
-        method: 'GET'
-      })
-      .done(function(response) {
-        response = JSON.parse(response);
-        console.log(response)
-        artist = response.message.body.artist_list[0].artist;
-        console.log(artist);
-        $("#artist-name").html(artist.artist_name);
-        $("#twitter").attr("href", artist.artist_twitter_url);
-
-        artistId = artist.artist_id;
-        $.ajax({
-          url: '/php/searchAlbum.php?artistId=' + artistId,
-          method: 'GET'
-        })
-        .done(function(response) {
-          $('#discography').html(""),
-          response = JSON.parse(response);
-          albums = response.message.body.album_list;
-          console.log('these are albums');
-          console.log(albums);
-
-          for (var i = 0; i < albums.length; i++) {
-            albums[i]
-
-            $('#discography').append("<tr><td>" + albums[i].album.album_name + "</td><td>" + albums[i].album.album_rating + "</td><td>" + albums[i].album.album_track_count + "</td><td>" + albums[i].album.album_release_date + "</td></tr>")
-
-          }
-        });
-      });
-    });
-
-
-    </script>
-</body>
-
-</html>
+@endsection
