@@ -28,6 +28,9 @@ h1 {
 p {
   color: white;
 }
+.discographytext {
+    color: black;
+}
 
 .btn {
   background-color: #00C457 !important;

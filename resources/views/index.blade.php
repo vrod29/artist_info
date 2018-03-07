@@ -38,7 +38,7 @@
       <div class="col-md-4 text-center">
         <div class="card">
           <img id="artistPic" class="card-img-top" src="{{ $response['artists']['items'][0]['images'][0]['url'] }}" alt="Card image cap">
-        <div class="card-body">
+     <div class="card-body">
           <h1>Bruno Mars</h1>
         <div id="social-media">
           <a id='twitter' href=""><img class="twitter mx-1" src="assets/twitter.svg" alt="" width="30px" height="30px"></a>
@@ -52,11 +52,28 @@
         <table class="table">
           <thead class="thead-dark">
             <tr>
+              <th scope="col">Album</th>
               <th scope="col">Album Name</th>
-              <th scope="col">Rating</th>
-              <th scope="col">Tracks</th>
               <th scope="col">Release Date</th>
             </tr>
+            <tr>
+                <td>Picture of Album</td>
+                <td>Name</td>
+                <td>Release Date</td>
+            </tr>
+
+            <tr>
+                <td>Picture of Album</td>
+                <td>Name</td>
+                <td>Release Date</td>
+            </tr>
+
+            <tr>
+                <td>Picture of Album</td>
+                <td>Name</td>
+                <td>Release Date</td>
+            </tr>
+
           </thead>
         <tbody id="discography">
         </tbody>
