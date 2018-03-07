@@ -39,7 +39,7 @@
         <div class="card">
           <img id="artistPic" class="card-img-top" src="{{ $response['artists']['items'][0]['images'][0]['url'] }}" alt="Card image cap">
         <div class="card-body">
-          <h1 id='artist-name'>Bruno Mars</h1>
+          <h1>Bruno Mars</h1>
         <div id="social-media">
           <a id='twitter' href=""><img class="twitter mx-1" src="assets/twitter.svg" alt="" width="30px" height="30px"></a>
           <a id="facebook" href=""><img class="facebok mx-1" src="assets/facebook.svg" alt="" width="30px" height="30px"></a>
