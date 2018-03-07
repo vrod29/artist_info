@@ -17,6 +17,10 @@ background: linear-gradient(to bottom, #00c457 0%,#000000 100%); /* W3C, IE10+, 
 filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00c457', endColorstr='#000000',GradientType=0 ); /* IE6-9 */
 }
 
+.fullscreen {
+  height: 100vh;
+}
+
 h1 {
   color: white;
 }
@@ -28,6 +32,12 @@ p {
 .btn {
   background-color: #00C457 !important;
   color: white;
+}
+
+.btn:hover {
+  background-color: white !important;
+  color: #00C457 !important;
+  border-color: solid 1px #00C457 !important;
 }
 
 p {

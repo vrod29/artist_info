@@ -9,10 +9,10 @@
 <?php if (!empty($response)) dump($response['artists']['items'][0]['images'][0]['url']); ?>
 
   <!-- Header Jumbotron -->
-  <section id="top" class="jumbotron jumbotron-fluid">
+  <section id="top" class="jumbotron jumbotron-fluid @if (empty($response)) fullscreen @endif">
     <div class="container mt-5">
       <h1 class="display-4 text-center">Welcome to 1-Stop Music</h1>
-      <p class="lead text-center">Your 1-Stop site for artists info, discography, tour info, and videos.</p>
+      <p class="lead text-center">Your 1-Stop site for artists info, discography, and tour info.</p>
     </div>
     <div class="container">
       <div class="row justify-content-center">
@@ -32,13 +32,14 @@
   </section>
 
     <!-- ///pic/bio// -->
+  @if (!empty($response))
   <div class="container">
     <div class="row">
       <div class="col-md-4 text-center">
         <div class="card">
           <img id="artistPic" class="card-img-top" src="{{ $response['artists']['items'][0]['images'][0]['url'] }}" alt="Card image cap">
         <div class="card-body">
-          <h1 id='artist-name'>Bruno Mars</h1>
+          <h1>Bruno Mars</h1>
         <div id="social-media">
           <a id='twitter' href=""><img class="twitter mx-1" src="assets/twitter.svg" alt="" width="30px" height="30px"></a>
           <a id="facebook" href=""><img class="facebok mx-1" src="assets/facebook.svg" alt="" width="30px" height="30px"></a>
@@ -63,7 +64,8 @@
       </div>
     </div>
   </div>
-  <hr>
+  @endif
+  <!-- <hr>
 <div class="container">
   <div class="row">
     <div class="col-md-5 text-center">
@@ -97,6 +99,6 @@
               <iframe width="250" height="250" src="https://www.youtube.com/embed/nPvuNsRccVw">
             </iframe>
         </body>
-    </div>
+    </div> -->
 
 @endsection
