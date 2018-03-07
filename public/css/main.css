@@ -25,7 +25,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00c457', end
   color: white;
 }
 
-p {
+.header-p {
   color: white;
 }
 
@@ -38,10 +38,6 @@ p {
   background-color: white !important;
   color: #00C457 !important;
   border-color: solid 1px #00C457 !important;
-}
-
-p {
-  margin-top: -35px;
 }
 
 #search-headings {
@@ -66,7 +62,7 @@ p {
 
 .card {
   border: 0;
-}
+/* }
 .overflow-scroll-gradient {
   position: relative;
 }
@@ -78,7 +74,7 @@ p {
   height: 25px;
   background: linear-gradient(rgba(255, 255, 255, 0.001), white); /* transparent keyword is broken in Safari */
 }
-.overflow-scroll-gradient__scroller {
+/* .overflow-scroll-gradient__scroller {
   overflow-y: scroll;
   background: white;
   width: 400px;
@@ -91,10 +87,4 @@ p {
 .scroll-discography {
   height: 300px;
   overflow-y: auto;
-}
-
-#tour-info {
-  height: 300px;
-  width: 400px;
-  overflow-y: auto;
-}
+} */ */
