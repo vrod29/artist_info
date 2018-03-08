@@ -10,12 +10,18 @@
     dump($events);
 } ?>
 
+@if (!empty($response));
 <style>
+
  .tour-pic {
    background-image: url({{ $response['artists']['items'][0]['images'][0]['url'] }}) ;
+   opacity: 0.50;
+   height: 500px;
+   width: 100%;
+   position: absolute;
  }
-
 </style>
+@endif
 
   <!-- Header Jumbotron -->
   <section id="top" class="jumbotron jumbotron-fluid @if (empty($response)) fullscreen @endif">
@@ -82,11 +88,17 @@
   </div>
   @endif
 
-<!-- Tour Info -->
+  <br>
 
-<section class="event-info tour-pic">
+<!-- Tour Info -->
+@if (!empty($response));
+<section class="event-info">
+  <div class="tour-pic">
+  </div>
   <div class="container">
-    <div class="row">
+  </div>
+  <div class="container">
+    <div class="row tour-info">
       <div class="col">
         <h1 class="display-6 text-center">{{ $response['artists']['items'][0]['name']}}</h1>
           <table class="table table-striped">
@@ -113,5 +125,6 @@
       </div>
     </div>
 </section>
+@endif
 
 @endsection
