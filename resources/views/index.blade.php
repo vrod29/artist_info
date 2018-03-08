@@ -13,9 +13,9 @@
 <style>
 
  .tour-pic {
-   background-image: url({{ $response['artists']['items'][0]['images'][0]['url'] }}) ;
+   background-image: url(/images/concert.jpg);
    opacity: 0.50;
-   height: 500px;
+   height: 650px;
    width: 100%;
    position: absolute;
  }
@@ -132,6 +132,34 @@
              @endif
             </tbody>
           </table>
+        </div>
+      </div>
+    </div>
+    <div class="container event-info">
+      <div class="row tour-info">
+        <div class="col">
+          <div>
+            <table class="table table-striped">
+            </div>
+              <thead>
+                <tr>
+                  <th></th>
+                  <th></th>
+                  <th></th>
+                  <th></th>
+                </tr>
+              </thead>
+                <tbody>
+                  @foreach($events['resultsPage']['results']['event'] as $event )
+                  <tr>
+                    <td>{{$event['start']['date']}}</td>
+                    <td>{{$event['venue']['displayName']}}</td>
+                    <td>{{$event['location']['city']}}</td>
+                    <td><button type="button" class="btn btn-rounded btn-sm my-0">Ticketmaster</button></td>
+                  </tr>
+                  @endforeach
+                </tbody>
+            </table>
         </div>
       </div>
     </div>
