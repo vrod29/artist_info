@@ -8,9 +8,15 @@
 
 <?php if (!empty($albums)) dump($albums); ?>
 
+@if (!empty($response));
 <style>
+
  .tour-pic {
    background-image: url({{ $response['artists']['items'][0]['images'][0]['url'] }}) ;
+   opacity: 0.50;
+   height: 500px;
+   width: 100%;
+   position: absolute;
  }
 
 .picSize {
@@ -18,6 +24,7 @@
     height: 50px;
 }
 </style>
+@endif
 
   <!-- Header Jumbotron -->
   <section id="top" class="jumbotron jumbotron-fluid @if (empty($response)) fullscreen @endif">
@@ -92,10 +99,11 @@
   </div>
   @endif
 
+  <br>
+
 <!-- Tour Info -->
 
 <section class="event-info tour-pic">
-
   <div class="container">
     <div class="row">
       <div class="col">
@@ -125,5 +133,6 @@
       </div>
     </div>
 </section>
+@endif
 
 @endsection
