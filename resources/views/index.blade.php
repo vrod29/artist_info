@@ -1,3 +1,4 @@
+
 @extends('master')
 
 @section('title')
@@ -6,9 +7,7 @@
 
 @section('content')
 
-<?php if (!empty($events)) {
-    dump($events);
-} ?>
+<?php if (!empty($albums)) dump($albums); ?>
 
 @if (!empty($response));
 <style>
@@ -20,6 +19,11 @@
    width: 100%;
    position: absolute;
  }
+
+.picSize {
+    width: 50px;
+    height: 50px;
+}
 </style>
 @endif
 
@@ -73,14 +77,22 @@
       <div class="col-md-8 scroll-discography">
         <table class="table">
           <thead class="thead-dark">
+
             <tr>
-              <th scope="col">Album Name</th>
-              <th scope="col">Rating</th>
-              <th scope="col">Tracks</th>
-              <th scope="col">Release Date</th>
+              <th>Pic</th>
+              <th>Album Name</th>
+              <th>Released</th>
+              <th></th>
             </tr>
           </thead>
         <tbody id="discography">
+            @foreach($albums['items'] as $album )
+            <tr>
+              <td><img src="{{$album['images'][0]['url']}}"  class="picSize"/></td>
+              <td>{{$album['name']}}</td>
+              <td>{{$album['release_date']}}</td>
+            </tr>
+            @endforeach
         </tbody>
       </table>
       </div>
@@ -91,15 +103,35 @@
   <br>
 
 <!-- Tour Info -->
-@if (!empty($response));
-<section>
-  <div class="tour-pic">
-  </div>
-    <div class="container">
-      <div class="row">
-        <div class="col">
-          <h1 class="display-6 text-center">{{ $response['artists']['items'][0]['name']}}</h1>
-          <p class="display-6 text-center">Tour Dates</p>
+@if (!empty($events))
+<section class="event-info tour-pic">
+  <div class="container">
+    <div class="row">
+      <div class="col">
+        <h1 class="display-6 text-center">{{ $response['artists']['items'][0]['name']}}</h1>
+          <table class="table table-striped">
+            <thead>
+              <tr>
+                <th></th>
+
+                <th></th>
+                <th></th>
+                <th></th>
+              </tr>
+            </thead>
+            <tbody>
+            @if (!empty($events['resultsPage']['results']['event']))
+              @foreach($events['resultsPage']['results']['event'] as $event )
+              <tr>
+                <td>{{$event['start']['date']}}</td>
+                <td>{{$event['venue']['displayName']}}</td>
+                <td>{{$event['location']['city']}}</td>
+                <td><button type="button" class="btn btn-primary btn-rounded btn-sm my-0">Ticketmaster</button></td>
+              </tr>
+              @endforeach
+             @endif
+            </tbody>
+          </table>
         </div>
       </div>
     </div>
