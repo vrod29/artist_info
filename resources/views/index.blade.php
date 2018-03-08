@@ -92,12 +92,10 @@
 
 <!-- Tour Info -->
 @if (!empty($response));
-<section class="event-info">
+<section>
   <div class="tour-pic">
   </div>
-  <div class="container">
-  </div>
-  <div class="container">
+  <div class="container event-info">
     <div class="row tour-info">
       <div class="col">
         <h1 class="display-6 text-center">{{ $response['artists']['items'][0]['name']}}</h1>
