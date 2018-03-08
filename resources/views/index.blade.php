@@ -1,3 +1,4 @@
+
 @extends('master')
 
 @section('title')
@@ -102,7 +103,7 @@
   <br>
 
 <!-- Tour Info -->
-
+@if (!empty($events))
 <section class="event-info tour-pic">
   <div class="container">
     <div class="row">
@@ -119,6 +120,7 @@
               </tr>
             </thead>
             <tbody>
+            @if (!empty($events['resultsPage']['results']['event']))
               @foreach($events['resultsPage']['results']['event'] as $event )
               <tr>
                 <td>{{$event['start']['date']}}</td>
@@ -127,6 +129,7 @@
                 <td><button type="button" class="btn btn-primary btn-rounded btn-sm my-0">Ticketmaster</button></td>
               </tr>
               @endforeach
+             @endif
             </tbody>
           </table>
         </div>
