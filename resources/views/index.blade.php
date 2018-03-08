@@ -6,7 +6,7 @@
 
 @section('content')
 
-<?php if (!empty($events)) dump($events); ?>
+<?php if (!empty($albums)) dump($albums); ?>
 
   <!-- Header Jumbotron -->
   <section id="top" class="jumbotron jumbotron-fluid @if (empty($response)) fullscreen @endif">
@@ -57,11 +57,12 @@
       <div class="col-md-8 scroll-discography">
         <table class="table">
           <thead class="thead-dark">
+
             <tr>
-              <th scope="col">Album Name</th>
-              <th scope="col">Rating</th>
-              <th scope="col">Tracks</th>
-              <th scope="col">Release Date</th>
+              <th>Pic</th>
+              <th>Album Name</th>
+              <th>Released</th>
+              <th></th>
             </tr>
           </thead>
         <tbody id="discography">
