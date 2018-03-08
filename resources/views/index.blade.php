@@ -13,6 +13,10 @@
    background-image: url({{ $response['artists']['items'][0]['images'][0]['url'] }}) ;
  }
 
+.picSize {
+    width: 50px;
+    height: 50px;
+}
 </style>
 
   <!-- Header Jumbotron -->
@@ -74,6 +78,13 @@
             </tr>
           </thead>
         <tbody id="discography">
+            @foreach($albums['items'] as $album )
+            <tr>
+              <td><img src="{{$album['images'][0]['url']}}"  class="picSize"/></td>
+              <td>{{$album['name']}}</td>
+              <td>{{$album['release_date']}}</td>
+            </tr>
+            @endforeach
         </tbody>
       </table>
       </div>
@@ -84,6 +95,7 @@
 <!-- Tour Info -->
 
 <section class="event-info tour-pic">
+
   <div class="container">
     <div class="row">
       <div class="col">
@@ -92,6 +104,7 @@
             <thead>
               <tr>
                 <th></th>
+
                 <th></th>
                 <th></th>
                 <th></th>
