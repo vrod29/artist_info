@@ -61,29 +61,41 @@
         <!--/.Card-->
 
         <!-- Discography -->
-        <div class="col-md-8 scroll-discography">
-            <table class="table">
-                <thead class="thead-dark">
-                    <tr>
-                        <th>Pic</th>
-                        <th>Album Name</th>
-                        <th>Released</th>
-                        <th></th>
-                    </tr>
-                </thead>
-                <tbody id="discography">
-                    @foreach($albums['items'] as $album )
-                    <tr>
-                        <td><img src="{{$album['images'][0]['url']}}" class="picSize" /></td>
-                        <td>{{$album['name']}}</td>
-                        <td>{{$album['release_date']}}</td>
-                    </tr>
-                    @endforeach
-                </tbody>
-            </table>
+        <div style="position:relative">
+            <div class="container">
+                <div class="row">
+                    <div class="col">
+                        <h1 class="text-center">Discography</h1>
+                    </div>
+                </div>
+            </div>
+            <div class="container disc-info">
+                <div class="row">
+                    <div class="col">
+                        <table class="table table-striped">
+                            <thead>
+                                <tr>
+                                    <th>Album</th>
+                                    <th>Name</th>
+                                    <th>Release Date</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach($albums['items'] as $album )
+                                <tr>
+                                  <td><img src="{{$album['images'][0]['url']}}" class="picSize" /></td>
+                                  <td>{{$album['name']}}</td>
+                                  <td>{{$album['release_date']}}</td>
+                                </tr>
+                                @endforeach
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
         </div>
+      </div>
     </div>
-</div>
 @endif
 
 <br>
