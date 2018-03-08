@@ -57,3 +57,8 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00c457', end
   overflow: auto;
   position: relative;
 }
+
+.picSize {
+    width: 50px;
+    height: 50px;
+}

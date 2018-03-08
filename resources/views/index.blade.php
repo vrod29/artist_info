@@ -20,10 +20,6 @@
    position: absolute;
  }
 
-.picSize {
-    width: 50px;
-    height: 50px;
-}
 </style>
 @endif
 
@@ -77,7 +73,6 @@
       <div class="col-md-8 scroll-discography">
         <table class="table">
           <thead class="thead-dark">
-
             <tr>
               <th>Pic</th>
               <th>Album Name</th>
@@ -104,16 +99,24 @@
 
 <!-- Tour Info -->
 @if (!empty($events))
-<section class="event-info tour-pic">
-  <div class="container">
+<section>
+  <div class="tour-pic">
+  </div>
+    <div class="container">
+      <div class="row">
+        <div class="col">
+          <h1 class="text-center">{{ $response['artists']['items'][0]['name']}}</h1>
+          <p class="text-center">Tour Dates</p>
+          <table class="table table-striped">
+        </div>
+      </div>
+    </div>
+  <div class="container event-info">
     <div class="row">
       <div class="col">
-        <h1 class="display-6 text-center">{{ $response['artists']['items'][0]['name']}}</h1>
-          <table class="table table-striped">
             <thead>
               <tr>
                 <th></th>
-
                 <th></th>
                 <th></th>
                 <th></th>
@@ -132,34 +135,6 @@
              @endif
             </tbody>
           </table>
-        </div>
-      </div>
-    </div>
-    <div class="container event-info">
-      <div class="row tour-info">
-        <div class="col">
-          <div>
-            <table class="table table-striped">
-            </div>
-              <thead>
-                <tr>
-                  <th></th>
-                  <th></th>
-                  <th></th>
-                  <th></th>
-                </tr>
-              </thead>
-                <tbody>
-                  @foreach($events['resultsPage']['results']['event'] as $event )
-                  <tr>
-                    <td>{{$event['start']['date']}}</td>
-                    <td>{{$event['venue']['displayName']}}</td>
-                    <td>{{$event['location']['city']}}</td>
-                    <td><button type="button" class="btn btn-rounded btn-sm my-0">Ticketmaster</button></td>
-                  </tr>
-                  @endforeach
-                </tbody>
-            </table>
         </div>
       </div>
     </div>
