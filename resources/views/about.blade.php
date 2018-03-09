@@ -27,7 +27,7 @@
             </div>
 
         </div>
-        <p>
+        <p> 
             We are Valley Tech Academy alumni's that are excited to create and complete tough challenges that push our learning experience to the limit.
         </br>We come all the way from asking ourselves "What the heck is this?" to "Whoa! I can do this!" to "I actually did it, yea I created it!"
     </br>It's really about putting all the pieces together and understanding what each code means and does and where it needs to go.
