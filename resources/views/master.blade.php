@@ -41,12 +41,6 @@
   <div class="content"></div>
   <footer id="myFooter">
     <div class="container">
-      <div class="social-networks">
-        <a href="#" class="twitter"><i class="fab fa-twitter"></i></a>
-        <a href="#" class="facebook"><i class="fab fa-facebook"></i></a>
-        <a href="#" class="google"><i class="fab fa-google-plus"></i></a>
-        <a href="#" class="instagram"><i class="fab fa-instagram"></i></a>
-      </div>
       <div class="footer-copyright">
         <p>© 2018 1 STOP Music </p>
       </div>
