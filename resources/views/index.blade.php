@@ -1,5 +1,6 @@
  @extends('master') @section('title') 1 Stop Music @endsection @section('content')
 
+
 <style>
     .tour-pic {
         background-image: url(/images/concert.jpg);
@@ -9,7 +10,6 @@
         position: absolute;
     }
 </style>
-@endif
 
 <!-- Header Jumbotron -->
 <section id="top" class="jumbotron jumbotron-fluid @if (empty($response)) fullscreen @endif">
