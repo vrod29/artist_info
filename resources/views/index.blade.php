@@ -1,8 +1,5 @@
  @extends('master') @section('title') 1 Stop Music @endsection @section('content')
 
-<?php if (!empty($albums)) {
-    dump($albums);
-} ?> @if (!empty($response));
 <style>
     .tour-pic {
         background-image: url(/images/concert.jpg);
