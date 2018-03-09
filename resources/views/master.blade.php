@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link rel="stylesheet" href="css/normalize.css">
     <link rel="stylesheet" href="css/main.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" <script defer src="https://use.fontawesome.com/releases/v5.0.8/js/all.js"></script>
 
 
   <title>@yield('title')</title>
@@ -20,7 +20,7 @@
 <body data-spy="scroll" data-target="#navScrollspy">
   <nav class="navbar bg-primary navbar-dark navbar-expand-md fixed-top">
     <div class="container">
-      <a href="/" class="navbar-brand">1 STOP MUSIC</a>
+      <a href="/" class="navbar-brand">1 STOP Music</a>
       <button type="button" class="navbar-toggler navbar-toggler-right" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
       </button>
@@ -38,7 +38,19 @@
       @yield('content')
   </div>
 
-
+  <div class="content"></div>
+  <footer id="myFooter">
+    <div class="container">
+      <div class="social-networks">
+        <a href="#" class="twitter"><i class="fab fa-twitter"></i></a>
+        <a href="#" class="facebook"><i class="fab fa-facebook"></i></a>
+        <a href="#" class="google"><i class="fab fa-google-plus"></i></a>
+        <a href="#" class="instagram"><i class="fab fa-instagram"></i></a>
+      </div>
+      <div class="footer-copyright">
+        <p>© 2018 1 STOP Music </p>
+      </div>
+  </footer>
 
   <!-- Optional JavaScript -->
   <!-- jQuery first, then Popper.js, then Bootstrap JS -->
